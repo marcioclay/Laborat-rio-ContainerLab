@@ -45,7 +45,7 @@ docker ps
 
 3. Instalação do Containerlab
 
-   ```
+```
 bash -c "$(curl -sL https://get.containerlab.dev)"
 ```
 
