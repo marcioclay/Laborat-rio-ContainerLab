@@ -1,4 +1,4 @@
-# EBPF-LAB: Guia de Instalação e Configuração
+# eBPF-LAB: Guia de Instalação e Configuração
 Este documento descreve como instalar e configurar o ambiente de laboratório com Docker, Containerlab e Ubuntu, além de corrigir erros comuns encontrados durante a instalação.
 
 1. Ambiente
