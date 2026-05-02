@@ -110,34 +110,7 @@ Abra o endereço http://localhost:50080 no navegador ou use o Simple Browser no 
 
 6. Expansão da topologia
 Para adicionar mais nós, basta incluir novos blocos em nodes: e definir os links em links:.
-Exemplo com um switch central (bridge):
-
-```
-
-nodes:
-  node-a:
-    kind: linux
-    image: nicolaka/netshoot:latest
-    exec:
-      - ip addr add 10.0.0.1/24 dev eth1
-  node-b:
-    kind: linux
-    image: nicolaka/netshoot:latest
-    exec:
-      - ip addr add 10.0.0.2/24 dev eth1
-  node-c:
-    kind: linux
-    image: nicolaka/netshoot:latest
-    exec:
-      - ip addr add 10.0.0.3/24 dev eth1
-  switch:
-    kind: bridge
-
-links:
-  - endpoints: ["node-a:eth1", "switch:eth1"]
-  - endpoints: ["node-b:eth1", "switch:eth2"]
-  - endpoints: ["node-c:eth1", "switch:eth3"]
-```
+Exemplo com um switch central (bridge)
    
 
 
