@@ -1,5 +1,8 @@
 # Estrutura do laboratório
 
+<img width="300" height="400" alt="image" src="https://github.com/user-attachments/assets/bf4177e2-ba4c-4be4-a9d7-e9dea9a026b0" />
+
+
 📘 Infraestrutura do Containerlab
 ## 1. Camada de Host (Linux)
 O sistema operacional hospedeiro (Linux, WSL2 no seu caso) fornece os recursos de rede e kernel.
