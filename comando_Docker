@@ -1,0 +1,89 @@
+🐳 Comandos Básicos de Docker para Laboratórios com Containerlab
+O Docker é o motor que cria e gerencia os containers usados pelo Containerlab.
+Cada nó da sua topologia é, na prática, um container Docker.
+A seguir estão os comandos essenciais para entender e operar esse ambiente.
+
+🔍 1. Verificar Instalação e Versão
+bash
+docker --version
+Mostra a versão instalada do Docker.
+É útil para confirmar se o ambiente está pronto antes de iniciar o Containerlab.
+
+📦 2. Listar Containers
+bash
+docker ps
+Exibe todos os containers ativos.
+Para ver também os containers parados, use:
+
+bash
+docker ps -a
+🚀 3. Criar e Executar um Container
+bash
+docker run -it ubuntu bash
+run: cria e inicia um container.
+
+-it: abre um terminal interativo.
+
+ubuntu: imagem base usada.
+
+bash: comando executado dentro do container.
+
+👉 No Containerlab, esse processo é automatizado pelo arquivo lab.clab.yml.
+
+🧭 4. Acessar um Container Existente
+bash
+docker exec -it <nome-do-container> bash
+Permite entrar em um container já em execução.
+Exemplo:
+
+bash
+docker exec -it clab-ebpf-lab-node-a bash
+🧹 5. Parar e Remover Containers
+bash
+docker stop <nome-do-container>
+docker rm <nome-do-container>
+stop: encerra o container.
+
+rm: remove o container do sistema.
+
+Para remover todos os containers parados:
+
+bash
+docker container prune
+🧱 6. Listar Imagens Locais
+bash
+docker images
+Mostra todas as imagens disponíveis no host.
+Essas imagens são usadas pelo Containerlab para criar os nós.
+
+🔧 7. Construir Imagens Personalizadas
+bash
+docker build -t minha-imagem .
+Cria uma nova imagem a partir de um Dockerfile.
+Ideal para preparar ambientes com Wireshark, MQTT ou eBPF.
+
+🧩 8. Inspecionar Containers e Redes
+bash
+docker inspect <nome-do-container>
+docker network ls
+inspect: mostra detalhes técnicos (IP, volumes, etc.).
+
+network ls: lista as redes Docker — o Containerlab cria redes virtuais para conectar os nós.
+
+🧠 9. Dica Pedagógica
+Explique aos alunos que:
+
+O Containerlab usa o Docker como base.
+
+Cada nó é um container Linux isolado.
+
+Comandos Docker permitem explorar, depurar e entender o funcionamento interno da topologia.
+
+🧰 10. Comandos Úteis para Diagnóstico
+bash
+docker logs <nome-do-container>     # Ver logs
+docker stats                        # Monitorar uso de CPU e memória
+docker top <nome-do-container>      # Ver processos ativos
+💡 Conclusão
+Dominar esses comandos é essencial para compreender como o Containerlab constrói e gerencia topologias de rede.
+Eles permitem investigar, modificar e personalizar cada nó do seu laboratório de forma prática e controlada.
